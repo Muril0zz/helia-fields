@@ -1,0 +1,38 @@
+[
+ {
+  "id": "sorriso-br",
+  "name": "Sorriso, Mato Grosso, Brazil",
+  "lat": -12.62,
+  "lon": -55.86
+ },
+ {
+  "id": "vilhena-br",
+  "name": "Vilhena, Rond\u00f4nia, Brazil",
+  "lat": -12.55,
+  "lon": -60.05
+ },
+ {
+  "id": "salina-us",
+  "name": "Salina, Kansas, USA",
+  "lat": 38.95,
+  "lon": -97.45
+ },
+ {
+  "id": "ludhiana-in",
+  "name": "Ludhiana, Punjab, India",
+  "lat": 30.95,
+  "lon": 75.95
+ },
+ {
+  "id": "nakuru-ke",
+  "name": "Nakuru, Kenya",
+  "lat": -0.25,
+  "lon": 35.9
+ },
+ {
+  "id": "ames-us",
+  "name": "Ames, Iowa, USA",
+  "lat": 42.06,
+  "lon": -93.55
+ }
+]

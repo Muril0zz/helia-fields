@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helia · demo storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; height: 100%; background: #050a18; overflow: hidden; }
+  .scene { position: fixed; inset: 0; background: #050a18; display: flex; align-items: center; justify-content: center; }
+  .scene img { width: 100%; height: 100%; object-fit: cover; }
+  .scene img.contain { object-fit: contain; background: #050a18; }
+  .cap {
+    position: absolute; left: 4.5vw; bottom: 6vh; max-width: 62vw;
+    background: rgba(5, 10, 24, 0.88); border: 1px solid rgba(150, 176, 255, 0.22); border-radius: 18px;
+    padding: 2.2vh 2.2vw; color: #eaf0ff; font-family: 'Space Grotesk', Inter, sans-serif;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .cap.top { bottom: auto; top: 12vh; max-width: 40vw; }
+  .cap.side { bottom: auto; top: 36vh; left: 3vw; max-width: 28vw; }
+  .cap.side .t { font-size: 3.8vh; }
+  .cap .eb { font-family: 'JetBrains Mono', monospace; font-size: 1.5vh; letter-spacing: .18em; text-transform: uppercase; color: #ffc23d; margin-bottom: .8vh; }
+  .cap .t { font-size: 4.2vh; font-weight: 700; line-height: 1.08; letter-spacing: -.02em; }
+  .cap .s { font-family: Inter, sans-serif; font-size: 2.2vh; color: #b6c2e2; margin-top: 1vh; }
+  .brand { position: absolute; top: 3vh; right: 3vw; display: flex; align-items: center; gap: .8vw; font-family: 'Space Grotesk'; font-weight: 700; letter-spacing: .16em; color: #eaf0ff; font-size: 2vh; background: rgba(5,10,24,.75); padding: 1vh 1.2vw; border-radius: 12px; }
+  .center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #eaf0ff; font-family: 'Space Grotesk'; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const MARK = '<svg width="34" height="34" viewBox="0 0 64 64"><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(0 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#3DDC84" transform="rotate(45 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(90 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(135 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(180 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(225 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(270 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(315 32 32)"/><circle cx="32" cy="32" r="9.2" fill="#FFC23D"/><circle cx="32" cy="32" r="4.2" fill="#050A18"/></svg>';
+  const SCENES = [
+    { img: 'video/s1-globe.jpg', pos: 'top', eb: 'NASA Space Apps 2026 · Field Shift', t: 'Which crops should this field rotate?', s: 'Helia plans crop rotations from orbit, for any field on Earth.' },
+    { img: 'video/s2-field.jpg', eb: 'Click a field · Mato Grosso, Brazil', t: '21 years of NASA data in two seconds', s: 'NASA POWER daily weather and soil wetness, MODIS NDVI, SRTM terrain.' },
+    { img: 'video/s3-ndvi.png', contain: true, pos: 'side', eb: 'NASA MODIS · MOD13Q1 NDVI', t: 'Two crops a year, then bare soil', s: 'From July to October nothing grows on this field.' },
+    { img: 'video/s4-ndvimap.jpg', eb: 'NASA GIBS · MODIS NDVI, July 2025', t: 'Brown fields, green forest', s: 'The dry season leaves the farmland exposed to sun and storms.' },
+    { img: 'video/s2-field.jpg', eb: 'FAO-56 water balance · 19 real seasons', t: 'Hundreds of rotations, grown day by day', s: 'Every option faces the same 20 years of real weather.' },
+    { img: 'video/s6-smallest.png', contain: true, pos: 'side', eb: 'Smallest change · keeps your crops', t: 'Add one cover crop: 85% less bare soil', s: '+75 kg of nitrogen per hectare, with the cost shown honestly.' },
+    { img: 'video/s7-warming.jpg', eb: 'What if: +2 °C, 20% less rain', t: 'Bare soil grows to 160 days', s: 'The whole 20-year simulation re-runs in a fraction of a second.' },
+    { img: 'video/s1-globe.jpg', pos: 'top', eb: 'Free · open source · NASA open data', t: 'Any field on Earth.', s: 'helia-fields.netlify.app' },
+  ];
+  const i = Math.max(0, Math.min(SCENES.length - 1, Number(new URLSearchParams(location.search).get('s') || 1) - 1));
+  const sc = SCENES[i];
+  document.getElementById('root').innerHTML = `
+    <div class="scene">
+      <img class="${sc.contain ? 'contain' : ''}" src="${sc.img}" alt="" />
+      <div class="brand">${MARK} HELIA</div>
+      <div class="cap ${sc.pos || ''}"><div class="eb">${sc.eb}</div><div class="t">${sc.t}</div><div class="s">${sc.s}</div></div>
+    </div>`;
+</script>
+</body>
+</html>

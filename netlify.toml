@@ -1,0 +1,8 @@
+# Build from Git (Netlify UI). Security and cache headers live in app/public/_headers.
+[build]
+  base = "app"
+  command = "npm ci && npm test && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helia · Pitch deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #050a18; --raise: #0d1834; --line: rgba(150,176,255,.16); --text: #eaf0ff; --muted: #93a1c4; --faint: #5f6d90;
+    --accent: #ffc23d; --good: #3ddc84; --warn: #ff8a3d; --bad: #ff4d5e; --water: #4cb4ff; --yellow: #ffc93c;
+  }
+  @page { size: 1600px 900px; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #02050d; color: var(--text); font-family: Inter, system-ui, sans-serif; }
+  .slide {
+    width: 1600px; height: 900px; margin: 24px auto; background: var(--bg); position: relative; overflow: hidden;
+    padding: 72px 88px; display: flex; flex-direction: column; page-break-after: always; break-after: page;
+  }
+  @media print { .slide { margin: 0; } body { background: var(--bg); } }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 18px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: 92px; line-height: .98; letter-spacing: -.035em; margin: 18px 0 22px; }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 60px; line-height: 1.02; letter-spacing: -.03em; margin: 14px 0 28px; max-width: 1250px; }
+  p, li { font-size: 26px; line-height: 1.4; color: var(--muted); }
+  .big { font-size: 30px; color: var(--text); }
+  .row { display: flex; gap: 40px; align-items: stretch; flex: 1; min-height: 0; }
+  .col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .shot { border-radius: 18px; border: 1px solid var(--line); width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  .card { background: var(--raise); border: 1px solid var(--line); border-radius: 20px; padding: 26px 28px; }
+  .stat { font-family: 'JetBrains Mono', monospace; font-size: 64px; font-weight: 600; letter-spacing: -.03em; color: var(--text); }
+  .stat small { font-size: 26px; color: var(--muted); }
+  .k { font-size: 20px; color: var(--muted); margin-top: 6px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .foot { position: absolute; left: 88px; right: 88px; bottom: 36px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--faint); }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: 'Space Grotesk'; font-weight: 700; letter-spacing: .16em; font-size: 22px; }
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 10px; }
+  .step { background: var(--raise); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .step b { display: block; font-family: 'Space Grotesk'; font-size: 26px; color: var(--text); margin-bottom: 8px; }
+  .step span { font-size: 19px; color: var(--muted); line-height: 1.35; display: block; }
+  .num { font-family: 'JetBrains Mono'; color: var(--accent); font-size: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 22px; }
+  td, th { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--faint); font-weight: 500; font-family: 'JetBrains Mono'; font-size: 16px; letter-spacing: .08em; text-transform: uppercase; }
+  td.v { font-family: 'JetBrains Mono'; color: var(--text); }
+  .good { color: var(--good) !important; } .bad { color: var(--bad) !important; }
+  ul { margin: 0; padding-left: 28px; } li { margin: 8px 0; }
+  .mini { padding: 16px 22px; } .mini p.big { font-size: 23px; line-height: 1.3; }
+  .tag { display: inline-block; font-family: 'JetBrains Mono'; font-size: 17px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; color: var(--muted); margin: 0 8px 8px 0; }
+</style>
+</head>
+<body>
+
+<!-- 1. Title -->
+<section class="slide">
+  <div class="brand">
+    <svg width="56" height="56" viewBox="0 0 64 64"><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(0 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#3DDC84" transform="rotate(45 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(90 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(135 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(180 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(225 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(270 32 32)"/><ellipse cx="32" cy="12.5" rx="5.2" ry="8.6" fill="#FFC23D" transform="rotate(315 32 32)"/><circle cx="32" cy="32" r="9.2" fill="#FFC23D"/><circle cx="32" cy="32" r="4.2" fill="#050A18"/></svg>
+    HELIA
+  </div>
+  <div class="row" style="margin-top: 40px;">
+    <div class="col" style="flex: 1.05; justify-content: center;">
+      <div class="eyebrow">NASA Space Apps 2026 · Field Shift: Adapting Farms with NASA Data</div>
+      <h1>Crop rotations planned from orbit.</h1>
+      <p class="big">Pick any field on Earth. Helia grows your rotation and every alternative through 20 years of NASA data, and shows three better options with the evidence, the gaps and the risks.</p>
+      <p style="margin-top: 26px;">Team <strong style="color: var(--text)">[TEAM NAME]</strong> · [Member 1] · [Member 2] · [Member 3] · Florianópolis, Brazil</p>
+    </div>
+    <div class="col" style="flex: .95;"><img class="shot" src="img/globe.jpg" alt="Helia globe view" style="object-position: 100% center;" /></div>
+  </div>
+</section>
+
+<!-- 2. Problem -->
+<section class="slide">
+  <div class="eyebrow">The problem</div>
+  <h2>Farmers choose rotations by habit, while the rain and heat under them keep moving.</h2>
+  <div class="grid3" style="margin-top: 10px;">
+    <div class="card"><div class="stat">138<small> days</small></div><div class="k">a typical soybean → maize field in Mato Grosso lies bare every year (simulated on NASA POWER 2005–2025)</div></div>
+    <div class="card"><div class="stat">344<small> mm</small></div><div class="k">of rain a year lands on that unprotected soil, the main driver of erosion and crusting</div></div>
+    <div class="card"><div class="stat">138 → 160<small> days</small></div><div class="k">bare soil with +2 °C and 20% less rain: crops finish sooner and leave the soil exposed longer</div></div>
+  </div>
+  <p style="margin-top: 36px; max-width: 1300px;">Adding a new crop is a gamble: it may protect the soil but use too much water, miss its season, or have no buyer. NASA has decades of weather and soil-moisture data for every field, but farmers can't turn it into a rotation decision.</p>
+  <div class="foot"><span>Helia</span><span>2 / 7</span></div>
+</section>
+
+<!-- 3. User experience -->
+<section class="slide">
+  <div class="eyebrow">The experience</div>
+  <h2 style="margin-bottom: 18px;">Click a field. See today's rotation, and three better ones.</h2>
+  <div class="row">
+    <div class="col" style="flex: 1.6;"><img class="shot" src="img/lab.jpg" alt="Rotation lab with four strategy cards" /></div>
+    <div class="col" style="flex: 1; gap: 14px;">
+      <div class="card mini"><span class="num">01</span><p class="big" style="margin: 4px 0 0;">MODIS NDVI shows how many crops the field really carries and when it lies bare.</p></div>
+      <div class="card mini"><span class="num">02</span><p class="big" style="margin: 4px 0 0;">The farmer sets priorities: save water, soil health, income, low risk.</p></div>
+      <div class="card mini"><span class="num">03</span><p class="big" style="margin: 4px 0 0;">Each option: why, evidence, benefits, information gaps and risks to check locally.</p></div>
+      <div class="card mini"><span class="num">04</span><p class="big" style="margin: 4px 0 0;">What if it rains 30% less? Drag a slider; 20 years re-run in 0.1 s.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Helia</span><span>3 / 7</span></div>
+</section>
+
+<!-- 4. How it works -->
+<section class="slide">
+  <div class="eyebrow">How it works</div>
+  <h2>A real crop model, run 20 times, for every option.</h2>
+  <div class="flow">
+    <div class="step"><span class="num">INPUT</span><b>NASA data</b><span>POWER daily weather + root-zone wetness, MODIS NDVI, SRTM slope, soil</span></div>
+    <div class="step"><span class="num">PHYSICS</span><b>FAO-56</b><span>Penman–Monteith ET₀ and a daily soil-water balance per crop</span></div>
+    <div class="step"><span class="num">BIOLOGY</span><b>Crop growth</b><span>Degree-day development, heat at flowering, frost, humid-season disease</span></div>
+    <div class="step"><span class="num">FARMING</span><b>Real calendar</b><span>Sowing follows each year's rain onset; second crop and cover follow harvest</span></div>
+    <div class="step"><span class="num">DECISION</span><b>Rank + explain</b><span>≈450 rotations screened, best 40 grown through 19–20 seasons, scored on your priorities</span></div>
+  </div>
+  <div class="grid2" style="margin-top: 28px;">
+    <div class="card"><b style="font-size: 26px;">Checked against real harvests</b><p style="margin: 8px 0 0;">38 official yield series (IBGE, Eurostat, Statistics Canada): 36 move with the simulation. It ranks options and risky years; it is not a yield forecast.</p></div>
+    <div class="card"><b style="font-size: 26px;">Next season: strong El Niño</b><p style="margin: 8px 0 0;">NOAA's outlook re-ranks every option on past seasons like it (2009/10, 2015/16, 2023/24). IBGE: those harvests were 8–9% below trend in central Brazil.</p></div>
+  </div>
+  <div class="foot"><span>Helia</span><span>4 / 7</span></div>
+</section>
+
+<!-- 5. NASA data -->
+<section class="slide">
+  <div class="eyebrow">NASA data at the core</div>
+  <h2>Without NASA open data, this tool cannot exist.</h2>
+  <table>
+    <tr><th>Dataset</th><th>What it does in Helia</th></tr>
+    <tr><td class="v">NASA POWER (MERRA-2, CERES, GPM-corrected rain)</td><td>21 years of daily weather and root-zone soil wetness drive the crop and water simulation, anywhere on Earth</td></tr>
+    <tr><td class="v">MODIS Terra MOD13Q1 NDVI</td><td>Reads the field's real crop cycles and bare months (our earlier award-winning phenology work)</td></tr>
+    <tr><td class="v">HLS (Landsat 8/9 + Sentinel-2) 30 m, found through NASA CMR</td><td>A year of cloud-free photos of the field itself: watch the crops grow, get harvested, and the soil lie bare</td></tr>
+    <tr><td class="v">GPM IMERG 30-min, SMAP L4, GLDAS (GIBS)</td><td>Playable layers: every storm on Earth in the last 24 h, water at the roots, water deep underground</td></tr>
+    <tr><td class="v">SRTM elevation</td><td>Field slope for the erosion factor and the 3D view</td></tr>
+    <tr><td class="v">Partners: ESA Sentinel-2, ISRIC SoilGrids, FAO-56/33</td><td>Field-scale basemap, soil texture, crop water parameters</td></tr>
+  </table>
+  <div class="foot"><span>Helia</span><span>5 / 7</span></div>
+</section>
+
+<!-- 6. Results -->
+<section class="slide">
+  <div class="eyebrow">What it finds: Sorriso, Mato Grosso</div>
+  <h2 style="margin-bottom: 16px;">Keep your crops. Add one cover. Bare soil drops 85%.</h2>
+  <div class="row">
+    <div class="col" style="flex: 1.15;">
+      <table>
+        <tr><th></th><th>Today: soybean → maize → fallow</th><th>Smallest change</th></tr>
+        <tr><th></th><th></th><th style="font-size:14px">soybean → maize → sunn hemp</th></tr>
+        <tr><td>Bare soil</td><td class="v">138 d/yr</td><td class="v good">20 d/yr</td></tr>
+        <tr><td>Rain on unprotected soil</td><td class="v">344 mm</td><td class="v good">209 mm</td></tr>
+        <tr><td>Straw returned</td><td class="v">9.5 t/ha</td><td class="v good">14.3 t/ha</td></tr>
+        <tr><td>Nitrogen left for next crop</td><td class="v">24 kg/ha</td><td class="v good">99 kg/ha</td></tr>
+        <tr><td>Indicative margin*</td><td class="v">$1,103</td><td class="v bad">$1,008</td></tr>
+      </table>
+      <p style="font-size: 18px; margin-top: 12px;">The trade-off is shown, not hidden: ~US$95/ha of cover seed buys 118 protected days and 75 kg N/ha. *Indicative prices, 19 NASA POWER seasons, rainfed.</p>
+    </div>
+    <div class="col" style="flex: .85;"><img class="shot" src="img/cards.png" alt="Strategy cards" /></div>
+  </div>
+  <div class="foot"><span>Helia</span><span>6 / 7</span></div>
+</section>
+
+<!-- 7. Impact -->
+<section class="slide">
+  <div class="eyebrow">Impact and what's next</div>
+  <h2>Every field on Earth, one click, free.</h2>
+  <div class="grid2">
+    <div class="card">
+      <b style="font-size: 28px;">Who it helps</b>
+      <ul>
+        <li>Family and commercial farmers planning next season</li>
+        <li>Extension agents and co-ops advising hundreds of farms</li>
+        <li>Lenders and insurers asking "is this rotation resilient?"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <b style="font-size: 28px;">Next</b>
+      <ul>
+        <li><b>Done:</b> your own farm by its CAR code, with an INPE PRODES deforestation check (EUDR cut-off 2020)</li>
+        <li>Field-level yields from co-ops to calibrate; local prices and soil tests</li>
+        <li>A WhatsApp assistant for farmers without a laptop</li>
+      </ul>
+    </div>
+  </div>
+  <p class="big" style="margin-top: 28px;">Try it: <span style="color: var(--accent); font-family: 'JetBrains Mono';">helia-fields.netlify.app</span> · code: <span style="color: var(--accent); font-family: 'JetBrains Mono';">github.com/Muril0zz/helia-fields</span></p>
+  <div class="foot"><span>Helia</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

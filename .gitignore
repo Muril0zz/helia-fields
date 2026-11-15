@@ -1,0 +1,9 @@
+.env*
+node_modules/
+.claude/worktrees/
+.DS_Store
+dist/
+__pycache__/
+.venv/
+CLAUDE.local.md
+*.tsbuildinfo
